@@ -1,0 +1,27 @@
+{
+  "name": "ai-home-agent",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "node --import tsx --test src/*.test.ts",
+    "start": "node dist/index.js",
+    "property-monitor:login": "tsx src/login.ts",
+    "property-monitor:chats": "tsx src/chats.ts",
+    "db:migrate": "tsx src/migrate.ts"
+  },
+  "dependencies": {
+    "input": "^1.0.1",
+    "pg": "^8.13.3",
+    "telegram": "^2.26.22",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@types/pg": "^8.11.10",
+    "tsx": "^4.0.0",
+    "typescript": "^5.7.0"
+  },
+  "engines": { "node": ">=22" }
+}
